@@ -14,6 +14,8 @@
 		1CAB33921B447A0E007CFCFF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CAB33911B447A0E007CFCFF /* Images.xcassets */; };
 		1CAB33951B447A0E007CFCFF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CAB33931B447A0E007CFCFF /* LaunchScreen.xib */; };
 		1CAB33A11B447A0E007CFCFF /* SmartPushTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CAB33A01B447A0E007CFCFF /* SmartPushTests.m */; };
+		1CAB34431B45A36B007CFCFF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CAB34421B45A36B007CFCFF /* MapKit.framework */; };
+		1CAB34921B4A63F4007CFCFF /* ServiceHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CAB34911B4A63F4007CFCFF /* ServiceHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,9 @@
 		1CAB339A1B447A0E007CFCFF /* SmartPushTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmartPushTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CAB339F1B447A0E007CFCFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1CAB33A01B447A0E007CFCFF /* SmartPushTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SmartPushTests.m; sourceTree = "<group>"; };
+		1CAB34421B45A36B007CFCFF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		1CAB34901B4A63F4007CFCFF /* ServiceHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceHelper.h; sourceTree = "<group>"; };
+		1CAB34911B4A63F4007CFCFF /* ServiceHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CAB34431B45A36B007CFCFF /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +69,7 @@
 		1CAB33781B447A0E007CFCFF = {
 			isa = PBXGroup;
 			children = (
+				1CAB34421B45A36B007CFCFF /* MapKit.framework */,
 				1CAB33831B447A0E007CFCFF /* SmartPush */,
 				1CAB339D1B447A0E007CFCFF /* SmartPushTests */,
 				1CAB33821B447A0E007CFCFF /* Products */,
@@ -83,12 +90,14 @@
 			children = (
 				1CAB33881B447A0E007CFCFF /* AppDelegate.h */,
 				1CAB33891B447A0E007CFCFF /* AppDelegate.m */,
-				1CAB338B1B447A0E007CFCFF /* ViewController.h */,
-				1CAB338C1B447A0E007CFCFF /* ViewController.m */,
-				1CAB338E1B447A0E007CFCFF /* Main.storyboard */,
 				1CAB33911B447A0E007CFCFF /* Images.xcassets */,
 				1CAB33931B447A0E007CFCFF /* LaunchScreen.xib */,
+				1CAB338E1B447A0E007CFCFF /* Main.storyboard */,
+				1CAB34901B4A63F4007CFCFF /* ServiceHelper.h */,
+				1CAB34911B4A63F4007CFCFF /* ServiceHelper.m */,
 				1CAB33841B447A0E007CFCFF /* Supporting Files */,
+				1CAB338B1B447A0E007CFCFF /* ViewController.h */,
+				1CAB338C1B447A0E007CFCFF /* ViewController.m */,
 			);
 			path = SmartPush;
 			sourceTree = "<group>";
@@ -168,6 +177,12 @@
 				TargetAttributes = {
 					1CAB33801B447A0E007CFCFF = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = 4CLA5UU3L6;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					1CAB33991B447A0E007CFCFF = {
 						CreatedOnToolsVersion = 6.2;
@@ -222,6 +237,7 @@
 				1CAB338D1B447A0E007CFCFF /* ViewController.m in Sources */,
 				1CAB338A1B447A0E007CFCFF /* AppDelegate.m in Sources */,
 				1CAB33871B447A0E007CFCFF /* main.m in Sources */,
+				1CAB34921B4A63F4007CFCFF /* ServiceHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,9 +359,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Amit Saurav (8J59DSGMN4)";
 				INFOPLIST_FILE = SmartPush/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "c1a47529-bc3f-4388-9a65-6dd1f3fb9bb0";
 			};
 			name = Debug;
 		};
@@ -353,9 +372,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = SmartPush/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "c1a47529-bc3f-4388-9a65-6dd1f3fb9bb0";
 			};
 			name = Release;
 		};
